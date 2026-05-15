@@ -6,9 +6,9 @@ import numpy as np
 torch.manual_seed(42)
 np.random.seed(42)
 
-# ==========================================
-# 1. System & AS Rule Functions
-# ==========================================
+
+# System & AS Rule Functions
+
 
 def simplified_as_rule(h, g, lam, c1, c2):
     """
@@ -78,9 +78,8 @@ def find_lambda_line_search(I_ave_linear, E_s_linear, mu_h, mu_g, L, c1, c2, tol
             
     return (lam_low + lam_high) / 2.0
 
-# ==========================================
-# 2. Deep Neural Network Models
-# ==========================================
+
+# Deep Neural Network Models
 
 class ClassificationDNN(nn.Module):
     """
@@ -107,7 +106,7 @@ class ClassificationDNN(nn.Module):
             nn.BatchNorm1d(12),
             nn.ReLU(),
             nn.Linear(12, output_dim)
-            # Note: CrossEntropyLoss applies Softmax internally
+            # CrossEntropyLoss applies Softmax internally
         )
 
     def forward(self, x):
