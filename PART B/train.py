@@ -17,7 +17,7 @@ def train_classification_model():
     mu_h, mu_g = 9.0, 7.0 # Normalized by sigma^2
     E_s_linear = 10**((30 - 30) / 10) # 30 dBm converted to Watts (1 Watt)
     
-    I_ave_db_range = np.arange(-20, 21, 5) # Smaller steps for quick run. Use step=1 for full dataset.
+    I_ave_db_range = np.arange(-20, 21, 5) # Smaller steps for quick run.
     num_samples_per_I = 2000 
     
     X_data, y_data = [], []
