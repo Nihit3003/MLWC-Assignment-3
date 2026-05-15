@@ -72,9 +72,8 @@ def generate_plots():
 
             results[(E_s_db, L)] = {'sep_ml': sep_ml, 'sep_opt': sep_opt, 'int_ml': int_ml}
 
-    # ============================
     # Plot 1: SEP vs I_ave (E_s = 25, 30; L=4)
-    # ============================
+    
     plt.figure(figsize=(8, 6))
     plt.plot(I_ave_db_range, results[(30, 4)]['sep_opt'], label='Conventional (Es=30)', linestyle='-')
     plt.plot(I_ave_db_range, results[(30, 4)]['sep_ml'], label='Model Based (Es=30)', marker='d', linestyle='none')
@@ -87,10 +86,9 @@ def generate_plots():
     plt.legend()
     plt.grid(True, which="both", ls="--")
     plt.savefig('plot1_sep_es.png')
-    
-    # ============================
+
     # Plot 2: Avg Interference vs I_ave (E_s = 25, 30; L=4)
-    # ============================
+    
     plt.figure(figsize=(8, 6))
     plt.plot(I_ave_db_range, 10**(I_ave_db_range/10), label='Interference Constraint', color='black', linestyle='--')
     plt.plot(I_ave_db_range, results[(30, 4)]['int_ml'], label='Model Based (Es=30)', marker='o')
@@ -103,9 +101,9 @@ def generate_plots():
     plt.grid(True, which="both", ls="--")
     plt.savefig('plot2_interference.png')
 
-    # ============================
+   
     # Plot 3: SEP vs I_ave (L = 2, 4; E_s=30)
-    # ============================
+   
     plt.figure(figsize=(8, 6))
     plt.plot(I_ave_db_range, results[(30, 4)]['sep_opt'], label='Conventional (L=4)', linestyle='-')
     plt.plot(I_ave_db_range, results[(30, 4)]['sep_ml'], label='Model Based (L=4)', marker='d', linestyle='none')
